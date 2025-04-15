@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  /* 3. Enable keyword animations */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 6. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /* 7. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /* 8. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /* 9. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  /*
+    10. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  body {
+    font-family: Work Sans
+    ;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(292, 16%, 49%);
+    font-size: 16px;
+    color: hsl(292, 16%, 49%);
+    font-weight: 400;
+
+
+  }
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: white;
+    padding: 1rem;
+    margin: 7rem auto;
+    border-radius: 1rem;
+    box-shadow: 10px 20px 9px rgba(49, 19, 45, 0.10);
+
+}
+.opening-container::before {
+    content: "";
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    min-height: 40vh;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.opening-container {
+    display: flex;
+    
+}
+h1 {
+    color:hsl(292, 42%, 14%);
+}
+.opener {
+    display: flex;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    font-weight: 600;
+    color: hsl(292, 42%, 14%);
+}
+.opener p {
+    max-width: 80%;
+    
+}
+.opening-container img{
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+@media screen and (min-width:700px) {
+    body {
+        font-size: 20px;
+    }
+    
+    h1 {
+        font-size: 4.2rem;
+    }
+    .container {
+        padding: 4rem;
+        max-width: 60%;
+    }
+    .opening-container img{
+        width: 3rem;
+        
+    }
+    .opening-container::before {
+        background-image: url(assets/images/background-pattern-desktop.svg);
+    }
+}
